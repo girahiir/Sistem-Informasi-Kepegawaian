@@ -1,0 +1,1248 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package View;
+
+import DataInduk.ControllerIndPeg;
+import DataKeluarga.ControllerKelPeg;
+import java.awt.BorderLayout;
+import DataPendidikan.ControllerPendPeg;
+import Pesan.ControllerPesan;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Girah Ihtama
+ */
+public class HalUtamaPegawai extends javax.swing.JFrame {
+
+    /**
+     * Creates new form HalUtama
+     */
+    String NIPPegawai;
+    Home home;
+    
+    ControllerPendPeg controllerPendPeg;
+    ControllerKelPeg controllerKelPeg;
+    ControllerPesan controllerPesanPeg;
+    ControllerIndPeg controllerIndPeg;
+    
+    public HalUtamaPegawai() {
+        initComponents();
+        home = new Home();
+        NIPPegawai = home.gettxtUsernameHome().getText();
+       System.out.println("HalUtamaPegawai:"+home.getUserName());
+         
+       controllerIndPeg = new ControllerIndPeg(this);
+       controllerPendPeg = new ControllerPendPeg(this);
+        controllerKelPeg = new ControllerKelPeg(this);
+        controllerPesanPeg = new ControllerPesan(this);
+    }
+    
+    public String getNIPPegawai(){
+        System.out.println("getNIPPegawai: "+home.getUserName());
+        return home.getUserName();
+    }
+    
+    // DATA INDUK PEGAWAI
+    
+     public JTextField gettxtNip() {
+        return txtNipIndPeg;
+    }
+
+    public JTextField gettxtNama() {
+        return txtNamaIndPeg;
+    }
+
+    public JTextField gettxtJk() {
+        return txtJkIndPeg;
+    }
+
+    public JTextField gettxtStatus() {
+        return txtStatusIndPeg;
+    }
+
+    public JTextField gettxtGolDar() {
+        return txtGolDarIndPeg;
+    }
+
+    public JTextField gettxtGelarDepan() {
+        return txtGelarDepanIndPeg;
+    }
+
+    public JTextField gettxtGelarBelakang() {
+        return txtGelarBelakangIndPeg;
+    }
+
+    public JTextField gettxtAgama() {
+        return txtAgamaIndPeg;
+    }
+
+    public JTextField gettxtTempatLahir() {
+        return txtTempatLahirIndPeg;
+    }
+
+    public JTextField gettxtTglLahir() {
+        return txtTglLahirIndPeg;
+    }
+
+    public JTextField gettxtNoKtp() {
+        return txtNoKtpIndPeg;
+    }
+
+    public JTextField gettxtAlamat() {
+        return txtAlamatIndPeg;
+    }
+
+    public JTextField gettxtNoTelp() {
+        return txtNoTelpIndPeg;
+    }
+
+    public JTextField gettxtNoPonsel() {
+        return txtNoPonselIndPeg;
+    }
+    public JTable gettabelDataIndPeg(){
+        return tabelDataIndPeg;
+    }
+     public JButton getBtnUpdatePeg() {
+        return btnUpdateIndPeg;
+    }
+
+    // DATA PENDIDIKAN PEGAWAI
+    
+    public JTextField gettxtID() {
+        return txtID;
+    }
+     
+     public JTextField gettxtNIPPendidikan() {
+        return txtNIPPendidikanBK;
+    }
+     
+     public JTextField gettxtTingkatPendidikanPeg(){
+         return txttingkatPend;
+     }
+     
+    public JTextField gettxtTempatPendidikanPeg(){
+         return txtTempatPend;
+     }
+     
+    public JTextField gettxtJurusan(){
+         return txtJurusan;
+     }
+    
+    public JTextField gettxtTanggalIjazah(){
+         return txtTanggalIjazah;
+     }
+    
+    public JTextField gettxtTahunMasuk(){
+         return txtTahunMasuk;
+     }
+    
+     public JTextField gettxtTahunLulus(){
+         return txtTahunLulus;
+     }
+
+     public JTable getTabelData() {
+        return tabelDataPendidikanBK;
+    }
+      
+        public JButton getBtnUpdate() {
+        return btnUpdatePendidikanBK;
+    }
+        
+        //DATA KELUARGA PEGAWAI
+        
+        
+        public JTextField gettxtIdKelPeg() {
+        return txtIdKelPeg;
+    }
+
+    public JTextField gettxtNipKelPeg() {
+        return txtNipKelPeg;
+    }
+
+    public JTextField gettxtAyah() {
+        return txtAyah;
+    }
+
+    public JTextField gettxtIbu() {
+        return txtIbu;
+    }
+
+    public JTextField gettxtIstri() {
+        return txtIstri;
+    }
+
+    public JTextField gettxtSuami() {
+        return txtSuami;
+    }
+
+    public JTextField gettxtJmlAnak() {
+        return txtJmlAnak;
+    }
+
+    public JTextField gettxtKerjaSuami() {
+        return txtKerjaSuami;
+    }
+
+    public JTextField gettxtKerjaIstri() {
+        return txtKerjaIstri;
+    }
+
+    public JTextField gettxtKerjaAnak() {
+        return txtKerjaAnak;
+    }
+
+    public JButton getBtnUpdateKeluarga() {
+        return btnUpdateKeluarga;
+    }
+
+    public JTable getTabelDataKeluarga() {
+        return tabelDataKeluarga;
+    }
+    
+    
+    /** PANEL PESAN PEGAWAI**/
+    public JTextArea gettxtPesanPegawai(){
+        return taPesanPegawai;
+    }
+    
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanelSlider1 = new diu.swe.habib.JPanelSlider.JPanelSlider();
+        panelGlass1PegawaiUtama = new usu.widget.glass.PanelGlass();
+        panelGlass2DataInduk = new usu.widget.glass.PanelGlass();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        panelGlass2 = new usu.widget.glass.PanelGlass();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtNipIndPeg = new javax.swing.JTextField();
+        txtNamaIndPeg = new javax.swing.JTextField();
+        txtJkIndPeg = new javax.swing.JTextField();
+        txtStatusIndPeg = new javax.swing.JTextField();
+        txtGolDarIndPeg = new javax.swing.JTextField();
+        txtGelarDepanIndPeg = new javax.swing.JTextField();
+        txtGelarBelakangIndPeg = new javax.swing.JTextField();
+        txtAgamaIndPeg = new javax.swing.JTextField();
+        txtTempatLahirIndPeg = new javax.swing.JTextField();
+        txtTglLahirIndPeg = new javax.swing.JTextField();
+        txtNoKtpIndPeg = new javax.swing.JTextField();
+        txtAlamatIndPeg = new javax.swing.JTextField();
+        txtNoTelpIndPeg = new javax.swing.JTextField();
+        txtNoPonselIndPeg = new javax.swing.JTextField();
+        btnUpdateIndPeg = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tabelDataIndPeg = new javax.swing.JTable();
+        panelGlass3Pendidikan = new usu.widget.glass.PanelGlass();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        panelGlass3 = new usu.widget.glass.PanelGlass();
+        txtTahunLulus = new javax.swing.JTextField();
+        btnUpdatePendidikanBK = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        txttingkatPend = new javax.swing.JTextField();
+        txtTempatPend = new javax.swing.JTextField();
+        txtJurusan = new javax.swing.JTextField();
+        txtTanggalIjazah = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        txtTahunMasuk = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabelDataPendidikanBK = new javax.swing.JTable();
+        txtNIPPendidikanBK = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        panelGlass4Keluarga = new usu.widget.glass.PanelGlass();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        panelGlass1 = new usu.widget.glass.PanelGlass();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        txtAyah = new javax.swing.JTextField();
+        txtIbu = new javax.swing.JTextField();
+        txtIstri = new javax.swing.JTextField();
+        txtSuami = new javax.swing.JTextField();
+        txtJmlAnak = new javax.swing.JTextField();
+        txtKerjaSuami = new javax.swing.JTextField();
+        txtKerjaIstri = new javax.swing.JTextField();
+        txtKerjaAnak = new javax.swing.JTextField();
+        btnUpdateKeluarga = new javax.swing.JButton();
+        jLabel64 = new javax.swing.JLabel();
+        txtIdKelPeg = new javax.swing.JTextField();
+        jLabel65 = new javax.swing.JLabel();
+        txtNipKelPeg = new javax.swing.JTextField();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tabelDataKeluarga = new javax.swing.JTable();
+        panelGlass5DaftarGolongan = new usu.widget.glass.PanelGlass();
+        lblDaftarGolongan = new javax.swing.JLabel();
+        panelGlass6AturanNaik = new usu.widget.glass.PanelGlass();
+        lblNaik = new javax.swing.JLabel();
+        panelGlass7AturanPensiun = new usu.widget.glass.PanelGlass();
+        lblPensiun = new javax.swing.JLabel();
+        panelGlass9Pesan = new usu.widget.glass.PanelGlass();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taPesanPegawai = new usu.widget.TextArea();
+        label1 = new usu.widget.Label();
+        panelGlass1PegawaiUtama1 = new usu.widget.glass.PanelGlass();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuDataInduk = new javax.swing.JMenu();
+        jMenuDataIndukPeg = new javax.swing.JMenuItem();
+        jMenuDataPendidikan = new javax.swing.JMenuItem();
+        jMenuDataKeluarga = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Halaman Pegawai");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelSlider1.setOpaque(false);
+
+        panelGlass1PegawaiUtama.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/information_system.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout panelGlass1PegawaiUtamaLayout = new javax.swing.GroupLayout(panelGlass1PegawaiUtama);
+        panelGlass1PegawaiUtama.setLayout(panelGlass1PegawaiUtamaLayout);
+        panelGlass1PegawaiUtamaLayout.setHorizontalGroup(
+            panelGlass1PegawaiUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 736, Short.MAX_VALUE)
+        );
+        panelGlass1PegawaiUtamaLayout.setVerticalGroup(
+            panelGlass1PegawaiUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 496, Short.MAX_VALUE)
+        );
+
+        jPanelSlider1.add(panelGlass1PegawaiUtama, "card12");
+
+        panelGlass2.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/picBack.jpg"))); // NOI18N
+        panelGlass2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel1.setText("DATA INDUK PEGAWAI");
+        panelGlass2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 0, -1, -1));
+
+        jLabel2.setText("NIP");
+        panelGlass2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 47, -1, -1));
+
+        jLabel3.setText("Nama");
+        panelGlass2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 75, -1, -1));
+
+        jLabel4.setText("Jenis Kelamin");
+        panelGlass2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 109, -1, -1));
+
+        jLabel5.setText("Status");
+        panelGlass2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 140, -1, -1));
+
+        jLabel6.setText("Golongan Darah");
+        panelGlass2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 171, -1, -1));
+
+        jLabel7.setText("Gelar Depan");
+        panelGlass2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 202, -1, -1));
+
+        jLabel8.setText("Gelar Belakang");
+        panelGlass2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 233, -1, -1));
+
+        jLabel9.setText("Agama");
+        panelGlass2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 264, -1, -1));
+
+        jLabel10.setText("Tempat Lahir");
+        panelGlass2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 295, -1, -1));
+
+        jLabel11.setText("Tanggal Lahir");
+        panelGlass2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 326, -1, -1));
+
+        jLabel12.setText("No. KTP");
+        panelGlass2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 357, -1, -1));
+
+        jLabel13.setText("Alamat");
+        panelGlass2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 388, -1, -1));
+
+        jLabel14.setText("No. Telp");
+        panelGlass2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 419, -1, -1));
+
+        jLabel15.setText("No. Ponsel");
+        panelGlass2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 450, -1, -1));
+        panelGlass2.add(txtNipIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 44, 346, -1));
+        panelGlass2.add(txtNamaIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 75, 346, -1));
+        panelGlass2.add(txtJkIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 106, 346, -1));
+        panelGlass2.add(txtStatusIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 137, 346, -1));
+        panelGlass2.add(txtGolDarIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 168, 346, -1));
+        panelGlass2.add(txtGelarDepanIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 199, 346, -1));
+        panelGlass2.add(txtGelarBelakangIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 230, 346, -1));
+        panelGlass2.add(txtAgamaIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 261, 346, -1));
+        panelGlass2.add(txtTempatLahirIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 292, 346, -1));
+
+        txtTglLahirIndPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTglLahirIndPegActionPerformed(evt);
+            }
+        });
+        panelGlass2.add(txtTglLahirIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 323, 346, -1));
+
+        txtNoKtpIndPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNoKtpIndPegActionPerformed(evt);
+            }
+        });
+        panelGlass2.add(txtNoKtpIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 354, 346, -1));
+
+        txtAlamatIndPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAlamatIndPegActionPerformed(evt);
+            }
+        });
+        panelGlass2.add(txtAlamatIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 385, 346, -1));
+        panelGlass2.add(txtNoTelpIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 416, 346, -1));
+        panelGlass2.add(txtNoPonselIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 447, 346, -1));
+
+        btnUpdateIndPeg.setText("Update");
+        btnUpdateIndPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateIndPegActionPerformed(evt);
+            }
+        });
+        panelGlass2.add(btnUpdateIndPeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 485, -1, -1));
+
+        tabelDataIndPeg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "NIP", "Nama", "Jenis Kelamin", "Status", "Golongan Darah", "Gelar Depan", "Gelar Belakang", "Agama", "Tempat Lahir", "Tanggal Lahir", "No. KTP", "Alamat", "No. Telp", "No. Ponsel"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelDataIndPeg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelDataIndPegMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tabelDataIndPeg);
+
+        panelGlass2.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 519, 1230, 43));
+
+        jScrollPane3.setViewportView(panelGlass2);
+
+        javax.swing.GroupLayout panelGlass2DataIndukLayout = new javax.swing.GroupLayout(panelGlass2DataInduk);
+        panelGlass2DataInduk.setLayout(panelGlass2DataIndukLayout);
+        panelGlass2DataIndukLayout.setHorizontalGroup(
+            panelGlass2DataIndukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass2DataIndukLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        panelGlass2DataIndukLayout.setVerticalGroup(
+            panelGlass2DataIndukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass2DataIndukLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        jPanelSlider1.add(panelGlass2DataInduk, "card13");
+
+        panelGlass3Pendidikan.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/picBack.jpg"))); // NOI18N
+        panelGlass3Pendidikan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelGlass3.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/picBack.jpg"))); // NOI18N
+        panelGlass3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelGlass3.add(txtTahunLulus, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 257, 223, -1));
+
+        btnUpdatePendidikanBK.setText("Update");
+        btnUpdatePendidikanBK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdatePendidikanBKActionPerformed(evt);
+            }
+        });
+        panelGlass3.add(btnUpdatePendidikanBK, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 295, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel37.setText("Tahun Masuk");
+        panelGlass3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel38.setText("ID");
+        panelGlass3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+        panelGlass3.add(txttingkatPend, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 99, 223, -1));
+        panelGlass3.add(txtTempatPend, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 133, 223, -1));
+        panelGlass3.add(txtJurusan, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 164, 223, -1));
+        panelGlass3.add(txtTanggalIjazah, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 195, 223, -1));
+
+        jLabel39.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel39.setText("DATA RIWAYAT PENDIDIKAN");
+        panelGlass3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 0, -1, -1));
+        panelGlass3.add(txtTahunMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 226, 223, -1));
+
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
+        panelGlass3.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 37, 223, -1));
+
+        tabelDataPendidikanBK.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NIP", "Tingkat Pendidikan", "Tempat Pendidikan", "Jurusan", "Tanggal Ijazah", "Tahun Masuk", "Tahun Lulus"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelDataPendidikanBK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelDataPendidikanBKMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tabelDataPendidikanBK);
+
+        panelGlass3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 720, 50));
+        panelGlass3.add(txtNIPPendidikanBK, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 68, 223, -1));
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel42.setText("Tahun Lulus");
+        panelGlass3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel43.setText("Tanggal Ijazah");
+        panelGlass3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel44.setText("Jurusan");
+        panelGlass3.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel45.setText("Tempat Pendidikan");
+        panelGlass3.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel46.setText("Tingkat Pendidikan");
+        panelGlass3.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel47.setText("NIP");
+        panelGlass3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
+
+        jScrollPane5.setViewportView(panelGlass3);
+
+        panelGlass3Pendidikan.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 640, 450));
+
+        jPanelSlider1.add(panelGlass3Pendidikan, "card14");
+
+        panelGlass4Keluarga.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelGlass1.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/picBack.jpg"))); // NOI18N
+
+        jLabel55.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel55.setText("DATA KELUARGA");
+
+        jLabel56.setText("Nama Ayah");
+
+        jLabel57.setText("Nama Ibu");
+
+        jLabel58.setText("Nama Istri");
+
+        jLabel59.setText("Nama Suami");
+
+        jLabel60.setText("Jumlah Anak");
+
+        jLabel61.setText("Pekerjaan Suami");
+
+        jLabel62.setText("Pekerjaan Istri");
+
+        jLabel63.setText("Pekerjaan Anak");
+
+        txtKerjaAnak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKerjaAnakActionPerformed(evt);
+            }
+        });
+
+        btnUpdateKeluarga.setText("Update");
+        btnUpdateKeluarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateKeluargaActionPerformed(evt);
+            }
+        });
+
+        jLabel64.setText("ID");
+
+        txtIdKelPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdKelPegActionPerformed(evt);
+            }
+        });
+
+        jLabel65.setText("NIP");
+
+        tabelDataKeluarga.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NIP", "Nama Ayah", "Nama Ibu", "Nama Suami", "Nama Istri", "Jumlah Anak", "Pekerjaan Suami", "Pekerjaan Istri", "Pekerjaan Anak"
+            }
+        ));
+        tabelDataKeluarga.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelDataKeluargaMouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(tabelDataKeluarga);
+
+        javax.swing.GroupLayout panelGlass1Layout = new javax.swing.GroupLayout(panelGlass1);
+        panelGlass1.setLayout(panelGlass1Layout);
+        panelGlass1Layout.setHorizontalGroup(
+            panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass1Layout.createSequentialGroup()
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGlass1Layout.createSequentialGroup()
+                        .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGlass1Layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel55))
+                            .addGroup(panelGlass1Layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnUpdateKeluarga)
+                                    .addGroup(panelGlass1Layout.createSequentialGroup()
+                                        .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel56)
+                                            .addComponent(jLabel57)
+                                            .addComponent(jLabel58)
+                                            .addComponent(jLabel59)
+                                            .addComponent(jLabel60)
+                                            .addComponent(jLabel61)
+                                            .addComponent(jLabel62)
+                                            .addComponent(jLabel63)
+                                            .addComponent(jLabel64)
+                                            .addComponent(jLabel65))
+                                        .addGap(30, 30, 30)
+                                        .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtKerjaAnak, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                                            .addComponent(txtKerjaIstri)
+                                            .addComponent(txtKerjaSuami)
+                                            .addComponent(txtJmlAnak)
+                                            .addComponent(txtSuami)
+                                            .addComponent(txtIstri)
+                                            .addComponent(txtIbu)
+                                            .addComponent(txtAyah)
+                                            .addComponent(txtIdKelPeg)
+                                            .addComponent(txtNipKelPeg))))))
+                        .addGap(0, 494, Short.MAX_VALUE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelGlass1Layout.setVerticalGroup(
+            panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel55)
+                .addGap(10, 10, 10)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel64)
+                    .addComponent(txtIdKelPeg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNipKelPeg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel65))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAyah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIbu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSuami, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtJmlAnak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKerjaSuami, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKerjaIstri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel62))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelGlass1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKerjaAnak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63))
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdateKeluarga)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+
+        jScrollPane6.setViewportView(panelGlass1);
+
+        panelGlass4Keluarga.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 640, 430));
+
+        jPanelSlider1.add(panelGlass4Keluarga, "card15");
+
+        lblDaftarGolongan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/dftrgol.jpg"))); // NOI18N
+        lblDaftarGolongan.setText("daftar golongan");
+
+        javax.swing.GroupLayout panelGlass5DaftarGolonganLayout = new javax.swing.GroupLayout(panelGlass5DaftarGolongan);
+        panelGlass5DaftarGolongan.setLayout(panelGlass5DaftarGolonganLayout);
+        panelGlass5DaftarGolonganLayout.setHorizontalGroup(
+            panelGlass5DaftarGolonganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass5DaftarGolonganLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(lblDaftarGolongan, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
+        );
+        panelGlass5DaftarGolonganLayout.setVerticalGroup(
+            panelGlass5DaftarGolonganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblDaftarGolongan, javax.swing.GroupLayout.PREFERRED_SIZE, 538, Short.MAX_VALUE)
+        );
+
+        jPanelSlider1.add(panelGlass5DaftarGolongan, "card16");
+
+        lblNaik.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/naik.png"))); // NOI18N
+        lblNaik.setText("aturan naik pangkat");
+
+        javax.swing.GroupLayout panelGlass6AturanNaikLayout = new javax.swing.GroupLayout(panelGlass6AturanNaik);
+        panelGlass6AturanNaik.setLayout(panelGlass6AturanNaikLayout);
+        panelGlass6AturanNaikLayout.setHorizontalGroup(
+            panelGlass6AturanNaikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass6AturanNaikLayout.createSequentialGroup()
+                .addComponent(lblNaik, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 61, Short.MAX_VALUE))
+        );
+        panelGlass6AturanNaikLayout.setVerticalGroup(
+            panelGlass6AturanNaikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblNaik, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+        );
+
+        jPanelSlider1.add(panelGlass6AturanNaik, "card17");
+
+        lblPensiun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pensi.png"))); // NOI18N
+        lblPensiun.setText("aturan pensiun");
+
+        javax.swing.GroupLayout panelGlass7AturanPensiunLayout = new javax.swing.GroupLayout(panelGlass7AturanPensiun);
+        panelGlass7AturanPensiun.setLayout(panelGlass7AturanPensiunLayout);
+        panelGlass7AturanPensiunLayout.setHorizontalGroup(
+            panelGlass7AturanPensiunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass7AturanPensiunLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(lblPensiun, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelGlass7AturanPensiunLayout.setVerticalGroup(
+            panelGlass7AturanPensiunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass7AturanPensiunLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPensiun, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
+        );
+
+        jPanelSlider1.add(panelGlass7AturanPensiun, "card18");
+
+        taPesanPegawai.setColumns(20);
+        taPesanPegawai.setRows(5);
+        jScrollPane2.setViewportView(taPesanPegawai);
+
+        label1.setText("Pesan");
+        label1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout panelGlass9PesanLayout = new javax.swing.GroupLayout(panelGlass9Pesan);
+        panelGlass9Pesan.setLayout(panelGlass9PesanLayout);
+        panelGlass9PesanLayout.setHorizontalGroup(
+            panelGlass9PesanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass9PesanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGlass9PesanLayout.createSequentialGroup()
+                .addGap(0, 379, Short.MAX_VALUE)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(313, 313, 313))
+        );
+        panelGlass9PesanLayout.setVerticalGroup(
+            panelGlass9PesanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGlass9PesanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+
+        jPanelSlider1.add(panelGlass9Pesan, "card19");
+
+        panelGlass1PegawaiUtama1.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/resources/information_system.jpg"))); // NOI18N
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jScrollPane9.setViewportView(jPanel1);
+
+        javax.swing.GroupLayout panelGlass1PegawaiUtama1Layout = new javax.swing.GroupLayout(panelGlass1PegawaiUtama1);
+        panelGlass1PegawaiUtama1.setLayout(panelGlass1PegawaiUtama1Layout);
+        panelGlass1PegawaiUtama1Layout.setHorizontalGroup(
+            panelGlass1PegawaiUtama1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 862, Short.MAX_VALUE)
+            .addGroup(panelGlass1PegawaiUtama1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGlass1PegawaiUtama1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        panelGlass1PegawaiUtama1Layout.setVerticalGroup(
+            panelGlass1PegawaiUtama1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 527, Short.MAX_VALUE)
+            .addGroup(panelGlass1PegawaiUtama1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGlass1PegawaiUtama1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanelSlider1.add(panelGlass1PegawaiUtama1, "card12");
+
+        getContentPane().add(jPanelSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 500));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/picBack.jpg"))); // NOI18N
+        jLabel32.setText("jLabel32");
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 480));
+
+        jMenuDataInduk.setText("Profil");
+        jMenuDataInduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDataIndukActionPerformed(evt);
+            }
+        });
+
+        jMenuDataIndukPeg.setText("Data Induk");
+        jMenuDataIndukPeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDataIndukPegActionPerformed(evt);
+            }
+        });
+        jMenuDataInduk.add(jMenuDataIndukPeg);
+
+        jMenuDataPendidikan.setText("Data Pendidikan");
+        jMenuDataPendidikan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDataPendidikanActionPerformed(evt);
+            }
+        });
+        jMenuDataInduk.add(jMenuDataPendidikan);
+
+        jMenuDataKeluarga.setText("Data Keluarga");
+        jMenuDataKeluarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDataKeluargaActionPerformed(evt);
+            }
+        });
+        jMenuDataInduk.add(jMenuDataKeluarga);
+
+        jMenuBar1.add(jMenuDataInduk);
+
+        jMenu2.setText("Kepegawaian");
+
+        jMenuItem4.setText("Daftar Pangkat/Golongan");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Peraturan Naik Pangkat");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Peraturan Pensiun");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Pesan");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Keluar");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu5);
+
+        setJMenuBar(jMenuBar1);
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuDataIndukPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDataIndukPegActionPerformed
+        jPanelSlider1.nextPanel(2,panelGlass2DataInduk,jPanelSlider1.left);
+        controllerIndPeg.isiTable();
+    }//GEN-LAST:event_jMenuDataIndukPegActionPerformed
+
+    private void jMenuDataPendidikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDataPendidikanActionPerformed
+//       DataPendidikanPeg pendPeg = new DataPendidikanPeg();
+//       pendPeg.setOpaque(true);
+//       pendPeg.setVisible(true);
+//       setContentPane(pendPeg);
+        
+         jPanelSlider1.nextPanel(8,panelGlass3Pendidikan,jPanelSlider1.left);
+         controllerPendPeg.isiTable();
+    }//GEN-LAST:event_jMenuDataPendidikanActionPerformed
+
+    private void jMenuDataKeluargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDataKeluargaActionPerformed
+        jPanelSlider1.nextPanel(8,panelGlass4Keluarga,jPanelSlider1.left);
+        controllerKelPeg.isiTable();
+        
+    }//GEN-LAST:event_jMenuDataKeluargaActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        jPanelSlider1.nextPanel(8,panelGlass5DaftarGolongan,jPanelSlider1.left);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        jPanelSlider1.nextPanel(8,panelGlass6AturanNaik,jPanelSlider1.left);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        jPanelSlider1.nextPanel(8,panelGlass7AturanPensiun,jPanelSlider1.left);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        System.out.println("menu pesan performed");
+        controllerPesanPeg.getPesan();
+        jPanelSlider1.nextPanel(8,panelGlass9Pesan,jPanelSlider1.left);
+    }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        Home home = new Home();
+        home.setLayout(new BorderLayout());
+        home.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        controllerPesanPeg.getPesan();
+        jPanelSlider1.nextPanel(8,panelGlass9Pesan,jPanelSlider1.left);
+    }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenuDataIndukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDataIndukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuDataIndukActionPerformed
+
+    private void tabelDataPendidikanBKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelDataPendidikanBKMouseClicked
+        // TODO add your handling code here:
+        controllerPendPeg.isiField(tabelDataPendidikanBK.getSelectedRow());
+        txtID.setEditable(false);
+        txtNIPPendidikanBK.setEditable(false);
+        
+    }//GEN-LAST:event_tabelDataPendidikanBKMouseClicked
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void btnUpdatePendidikanBKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePendidikanBKActionPerformed
+        // TODO add your handling code here:
+        controllerPendPeg.update();
+        controllerPendPeg.isiTable();
+    }//GEN-LAST:event_btnUpdatePendidikanBKActionPerformed
+
+    private void tabelDataIndPegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelDataIndPegMouseClicked
+        controllerIndPeg.isiField(tabelDataIndPeg.getSelectedRow());
+        txtNipIndPeg.setEditable(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabelDataIndPegMouseClicked
+
+    private void btnUpdateIndPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateIndPegActionPerformed
+        controllerIndPeg.update();
+        controllerIndPeg.isiTable();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateIndPegActionPerformed
+
+    private void txtAlamatIndPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatIndPegActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAlamatIndPegActionPerformed
+
+    private void txtNoKtpIndPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoKtpIndPegActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNoKtpIndPegActionPerformed
+
+    private void txtTglLahirIndPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTglLahirIndPegActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTglLahirIndPegActionPerformed
+
+    private void txtKerjaAnakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKerjaAnakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKerjaAnakActionPerformed
+
+    private void btnUpdateKeluargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateKeluargaActionPerformed
+        // TODO add your handling code here:
+        controllerKelPeg.update();
+        controllerKelPeg.isiTable();
+    }//GEN-LAST:event_btnUpdateKeluargaActionPerformed
+
+    private void txtIdKelPegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdKelPegActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdKelPegActionPerformed
+
+    private void tabelDataKeluargaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelDataKeluargaMouseClicked
+        // TODO add your handling code here:
+         controllerKelPeg.isiField(tabelDataKeluarga.getSelectedRow());
+         txtIdKelPeg.setEditable(false);
+         txtNipKelPeg.setEditable(false);
+         
+    }//GEN-LAST:event_tabelDataKeluargaMouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(HalUtamaPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(HalUtamaPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(HalUtamaPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(HalUtamaPegawai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+              /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new HalUtamaPegawai().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnUpdateIndPeg;
+    private javax.swing.JButton btnUpdateKeluarga;
+    private javax.swing.JButton btnUpdatePendidikanBK;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuDataInduk;
+    private javax.swing.JMenuItem jMenuDataIndukPeg;
+    private javax.swing.JMenuItem jMenuDataKeluarga;
+    private javax.swing.JMenuItem jMenuDataPendidikan;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JPanel jPanel1;
+    private diu.swe.habib.JPanelSlider.JPanelSlider jPanelSlider1;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private usu.widget.Label label1;
+    private javax.swing.JLabel lblDaftarGolongan;
+    private javax.swing.JLabel lblNaik;
+    private javax.swing.JLabel lblPensiun;
+    private usu.widget.glass.PanelGlass panelGlass1;
+    private usu.widget.glass.PanelGlass panelGlass1PegawaiUtama;
+    private usu.widget.glass.PanelGlass panelGlass1PegawaiUtama1;
+    private usu.widget.glass.PanelGlass panelGlass2;
+    private usu.widget.glass.PanelGlass panelGlass2DataInduk;
+    private usu.widget.glass.PanelGlass panelGlass3;
+    private usu.widget.glass.PanelGlass panelGlass3Pendidikan;
+    private usu.widget.glass.PanelGlass panelGlass4Keluarga;
+    private usu.widget.glass.PanelGlass panelGlass5DaftarGolongan;
+    private usu.widget.glass.PanelGlass panelGlass6AturanNaik;
+    private usu.widget.glass.PanelGlass panelGlass7AturanPensiun;
+    private usu.widget.glass.PanelGlass panelGlass9Pesan;
+    private usu.widget.TextArea taPesanPegawai;
+    private javax.swing.JTable tabelDataIndPeg;
+    private javax.swing.JTable tabelDataKeluarga;
+    private javax.swing.JTable tabelDataPendidikanBK;
+    private javax.swing.JTextField txtAgamaIndPeg;
+    private javax.swing.JTextField txtAlamatIndPeg;
+    private javax.swing.JTextField txtAyah;
+    private javax.swing.JTextField txtGelarBelakangIndPeg;
+    private javax.swing.JTextField txtGelarDepanIndPeg;
+    private javax.swing.JTextField txtGolDarIndPeg;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtIbu;
+    private javax.swing.JTextField txtIdKelPeg;
+    private javax.swing.JTextField txtIstri;
+    private javax.swing.JTextField txtJkIndPeg;
+    private javax.swing.JTextField txtJmlAnak;
+    private javax.swing.JTextField txtJurusan;
+    private javax.swing.JTextField txtKerjaAnak;
+    private javax.swing.JTextField txtKerjaIstri;
+    private javax.swing.JTextField txtKerjaSuami;
+    private javax.swing.JTextField txtNIPPendidikanBK;
+    private javax.swing.JTextField txtNamaIndPeg;
+    private javax.swing.JTextField txtNipIndPeg;
+    private javax.swing.JTextField txtNipKelPeg;
+    private javax.swing.JTextField txtNoKtpIndPeg;
+    private javax.swing.JTextField txtNoPonselIndPeg;
+    private javax.swing.JTextField txtNoTelpIndPeg;
+    private javax.swing.JTextField txtStatusIndPeg;
+    private javax.swing.JTextField txtSuami;
+    private javax.swing.JTextField txtTahunLulus;
+    private javax.swing.JTextField txtTahunMasuk;
+    private javax.swing.JTextField txtTanggalIjazah;
+    private javax.swing.JTextField txtTempatLahirIndPeg;
+    private javax.swing.JTextField txtTempatPend;
+    private javax.swing.JTextField txtTglLahirIndPeg;
+    private javax.swing.JTextField txttingkatPend;
+    // End of variables declaration//GEN-END:variables
+}

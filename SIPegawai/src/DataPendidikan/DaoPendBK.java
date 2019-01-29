@@ -1,0 +1,114 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DataPendidikan;
+
+import DataKeluarga.DaoKelBK;
+import Koneksi.Koneksi;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author lyandaf
+ */
+public class DaoPendBK implements DaoImplPendBK{
+
+    Connection connection;
+    final String insert = " INSERT INTO tbldatariwayatpend (idRp, NIP, tingkatPendidikan,tempatPendidikan,jurusan,tglIjazah,thnMasuk,thnLulus) VALUES(?,?,?,?,?,?,?,?);";
+    final String update = " UPDATE tbldatariwayatpend set NIP=? ,tingkatPendidikan =?, tempatPendidikan=?, jurusan=?, tglIjazah=?, thnMasuk=?, thnLulus=? where idRp=?;";
+    final String select = " SELECT * FROM tbldatariwayatpend";
+    
+    
+    public DaoPendBK(){
+        connection = Koneksi.connection();
+    }
+    
+    @Override
+    public void insert(ModelPend mk) {
+      PreparedStatement statement = null;
+      try {
+            statement = connection.prepareStatement(insert);
+            statement.setString(1, mk.getId());
+            statement.setString(2, mk.getNIP());
+            statement.setString(3, mk.getTingkatPendidikan());
+            statement.setString(4, mk.getTempatPendidikan());
+            statement.setString(5, mk.getJurusan());
+            statement.setString(6, mk.getTglIjazah());
+            statement.setInt(7, mk.getThnMasuk());
+            statement.setInt(8, mk.getThnLulus());
+            
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void update(ModelPend mk) {
+      PreparedStatement statement = null;
+      try {
+            statement = connection.prepareStatement(update);
+            
+            statement.setString(1, mk.getNIP());
+            statement.setString(2, mk.getTingkatPendidikan());
+            statement.setString(3, mk.getTempatPendidikan());
+            statement.setString(4, mk.getJurusan());
+            statement.setString(5, mk.getTglIjazah());
+            statement.setInt(6, mk.getThnMasuk());
+            statement.setInt(7, mk.getThnLulus());
+            statement.setString(8, mk.getId());
+            statement.executeUpdate();
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }  
+    }
+
+    @Override
+    public List<ModelPend> getAll() {
+      List<ModelPend> mk = null;
+      try{
+          mk = new ArrayList<ModelPend>();
+          Statement st = connection.createStatement();
+          ResultSet rs = st.executeQuery(select);
+          while (rs.next()){
+           ModelPend m = new ModelPend();
+           m.setId(rs.getString("idRp"));
+           m.setNIP(rs.getString("NIP"));
+           m.setTingkatPendidikan(rs.getString("tingkatPendidikan"));
+           m.setTempatPendidikan(rs.getString("tempatPendidikan"));
+           m.setJurusan(rs.getString("jurusan"));
+           m.setTglIjazah(rs.getString("tglIjazah"));
+           m.setThnMasuk(rs.getInt("thnMasuk"));
+           m.setThnLulus(rs.getInt("thnLulus"));
+           mk.add(m);
+          }
+      }catch (SQLException ex) {
+            Logger.getLogger(DaoPendBK.class.getName()).log(Level.SEVERE, null, ex);
+    }
+      return mk;
+    }
+    
+}
